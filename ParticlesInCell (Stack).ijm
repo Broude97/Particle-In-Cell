@@ -376,6 +376,8 @@ XY, YZ- and ZX-planes */
 	run("Close");
 	slice_id_max = 0;
 	for(i = 0; i < slice_nr - 1; i++) {
+		setSlice(i + 1);
+		run("Measure");
 		slice_id = getResult("RawIntDen", i);
 		if (slice_id > slice_id_max) {
 			slice_id_max = slice_id;
